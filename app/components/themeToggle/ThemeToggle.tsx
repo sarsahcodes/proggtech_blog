@@ -11,9 +11,24 @@ function ThemeToggle() {
   const { theme, toggleTheme } = useContext(ThemeContext);
 
   return (
-    <div className={styles.container} onClick={toggleTheme}>
+    <div
+      style={
+        theme === "dark"
+          ? { left: 1, backgroundColor: "white" }
+          : { left: 1, backgroundColor: "#0f172a" }
+      }
+      className={styles.container}
+      onClick={toggleTheme}
+    >
       <Image src={moon} alt="moon" width={14} height={14} />
-      <div className={styles.ball}></div>
+      <div
+        style={
+          theme === "dark"
+            ? { left: 1, backgroundColor: "#0f172a" }
+            : { right: 1, backgroundColor: "white" }
+        }
+        className={styles.ball}
+      ></div>
       <Image src={sun} alt="sun" width={14} height={14} />
     </div>
   );
